@@ -195,7 +195,7 @@ const GroceryExpenseTracker = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Grocery Expense Tracker</h1>
+      <h1 style={styles.header}>Grocery Expense Tracker List</h1>
 
       <div style={styles.section}>
         <h2 style={styles.subHeader}>Add New Item</h2>
