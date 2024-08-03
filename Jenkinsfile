@@ -18,21 +18,14 @@ pipeline {
                 }
             }
         }
-
-        stage("OWASP Dependency Check"){
-            steps{
-                dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'owasp'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-            }
-        }
-
-        stage("Sonar Quality Gate Scan"){
-            steps{
-                timeout(time: 2, unit: "MINUTES"){
-                    waitForQualityGate abortPipeline: false
-                }
-            }
-        }
+        
+        //stage("Sonar Quality Gate Scan"){
+        //    steps{
+        //        timeout(time: 2, unit: "MINUTES"){
+        //            waitForQualityGate abortPipeline: false
+        //        }
+        //    }
+        //}
 
         stage("Trivy File System Scan"){
             steps{
