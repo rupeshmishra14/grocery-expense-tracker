@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        SONAR_HOME= tool "Sonar"
+        SONAR_HOME= tool "sonar"
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
 
         stage("SonarQube Quality Analysis"){
             steps{
-                withSonarQubeEnv("Sonar"){
+                withSonarQubeEnv("sonar"){
                     sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=wanderlust -Dsonar.projectKey=wanderlust"
                 }
             }
