@@ -14,7 +14,7 @@ pipeline {
         stage("SonarQube Quality Analysis"){
             steps{
                 withSonarQubeEnv("sonar"){
-                    sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=wanderlust -Dsonar.projectKey=wanderlust"
+                    sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=grocery -Dsonar.projectKey=grocery"
                 }
             }
         }
